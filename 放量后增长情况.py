@@ -49,15 +49,15 @@ class VolBoom:
         # 方法1：使用 matplotlib 的 hist()
         useful_values = self.result.reset_index(drop=True)
         sns.histplot(useful_values, kde=True, color='royalblue', edgecolor='black')
-        plt.title('分布直方图 (Matplotlib)')
+        plt.title(f'放量{self.vol_multiple}倍，{self.time_window}日后收益率分布')
         plt.xlabel('数值')
         plt.ylabel('频数')
         # plt.grid(axis='y', alpha=0.02)
         plt.show()
 
 
-volboom2 = VolBoom(vol_multiple=1.5, time_window=20)
-volboom2.plot_hist()
+volboom2_10 = VolBoom(vol_multiple=2, time_window=10)
+volboom2_10.plot_hist()
 
 
 
